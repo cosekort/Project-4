@@ -88,3 +88,66 @@ Visualizations (bar charts and word clouds).
 Performance metrics of machine learning models.
 Clustering patterns.
 
+
+
+
+## Setup Instructions for Sql Database
+
+1. **Download the SQL file**:
+
+    - Use the SQL file from reviews.sql and run it in your PgAdmin4 query tool.
+
+2. **Download the data file**:
+
+    - Use the Reviews.csv data file
+    - UPDATE FROM 'relative/path/to/Reviews.csv' with YOUR pathway
+
+3. **Create a `.env` file** in the root directory of your project with the following content:
+
+    ```ini
+    DB_HOST="host name"
+    DB_PORT="port"
+    DB_NAME=Amazon Reviews
+    DB_USER="user"
+    DB_PASSWORD="password"
+    TABLE_NAME=reviews
+    ```
+
+    Replace all quotation parts with YOUR information. `DB_NAME` and `TABLE_NAME` will not change as they are part of the SQL database.
+
+4. **Install the required Python packages**:
+
+    ```sh
+    pip install pandas sqlalchemy ipython python-dotenv
+    ```
+
+5. **Run the script**:
+
+    ```sh
+    python your_script.py
+    ```
+
+By ensuring that the environment variables are required and not providing fallback values in the script, you enforce that the necessary configuration is provided by whoever runs the script, making the setup more explicit and less error-prone.
+
+### SQL Table Creation and Data Import
+
+Here is the SQL code to create the `reviews` table and import data from the CSV file:
+
+```sql
+CREATE TABLE reviews (
+    "Id" SERIAL PRIMARY KEY,
+    "ProductId" VARCHAR(255),
+    "UserId" VARCHAR(255),
+    "ProfileName" VARCHAR(255),
+    "HelpfulnessNumerator" INT,
+    "HelpfulnessDenominator" INT,
+    "Score" INT,
+    "Time" BIGINT,
+    "Summary" TEXT,
+    "Text" TEXT
+);
+
+COPY reviews ("Id", "ProductId", "UserId", "ProfileName", "HelpfulnessNumerator", "HelpfulnessDenominator", "Score", "Time", "Summary", "Text")
+FROM 'relative/path/to/Reviews.csv'
+DELIMITER ','
+CSV HEADER;
