@@ -12,7 +12,7 @@ CREATE TABLE reviews (
 );
 
 COPY reviews ("Id", "ProductId", "UserId", "ProfileName", "HelpfulnessNumerator", "HelpfulnessDenominator", "Score", "Time", "Summary", "Text")
-FROM 'C:\Users\Jay_m\OneDrive\Desktop\Project-4-main\jay work\data\Reviews.csv'
+FROM 'relative/path/to/Reviews.csv'
 DELIMITER ','
 CSV HEADER;
 
