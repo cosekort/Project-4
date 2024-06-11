@@ -1,18 +1,24 @@
 Amazon Review Data Analysis
 
 Project Overview
-This project analyzes Amazon review data, focusing on the ratings (1-5) and comments left by users. The primary goals are to clean and preprocess the data, perform sentiment analysis, visualize the results, and build predictive models to classify review sentiments. We also implement clustering using the KMeans algorithm to explore patterns within the reviews.
+This project analyzes Amazon review data, focusing on the ratings (1-5) and comments left by users. The primary goals are to clean and preprocess the data, perform sentiment analysis, visualize the results, and build predictive models to classify review sentiments. We also implement clustering using the KMeans algorithm to explore patterns within the reviews. We aim to answer the below question which will be answered through the coding. 
+
+  What are Amazon customer reviews sentiment analysis distibution and what can we predict the sentiment for new customer reviews will be?
+
+  What are the top 30 most common text/review words found within all amazon customer reviews? 
+
+  What are the top predominant keywords in the large cluster of customer reviews? 
 
 Table of Contents
-Dataset
-Data Cleaning
-Exploratory Data Analysis
-Text Preprocessing
-Sentiment Analysis
-Data Visualization
-Modeling
-Clustering
-Results
+`Dataset
+ Data Cleaning
+ Exploratory Data Analysis
+ Text Preprocessing
+ Sentiment Analysis
+ Data Visualization
+ Modeling
+ Clustering
+ Results
 
 Dataset
  
@@ -42,7 +48,7 @@ Text: Text review of the product.
 Data Cleaning
 Performed the following data-cleaning steps:
 
-Removed any personal information from the reviews.
+To follow data ethics standards, removed any personal information from the reviews info.
 Calculated the count and percentage distribution of each rating (1-5).
 Exploratory Data Analysis
 Analyzed the distribution of ratings and comments:
@@ -68,12 +74,18 @@ Word clouds for positive and negative reviews.
 
 Modeling
 Implemented various machine learning models to classify review sentiments:
- "
+
+Logistic Regression
+
+Multinomial Naive Bayes
+
+Multilayer Perceptron
+
+Support Vector Machine
+
+K-Nearest Neighbors
 
 
-
-
- "
 Clustering
 Applied the KMeans clustering algorithm to explore patterns within the reviews:
 
@@ -86,6 +98,17 @@ Distribution of ratings.
 Sentiment analysis results (positive, neutral, negative).
 Visualizations (bar charts and word clouds).
 Performance metrics of machine learning models.
+
+ Logistic Regression - 93%
+
+ Multinomial Naive Bayes - 89%
+
+ Multilayer Perceptron - 91%
+
+ Support Vector Machine - 89%
+
+ K-Nearest Neighbors - 89%
+
 Clustering patterns.
 
 
